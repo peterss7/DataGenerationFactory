@@ -1,0 +1,31 @@
+USE [PRS]
+GO
+
+/****** Object:  Table [dbo].[Vendors]    Script Date: 2/8/2023 1:30:50 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Vendors](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Code] [varchar](30) NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+	[Address] [varchar](30) NOT NULL,
+	[City] [varchar](30) NOT NULL,
+	[State] [varchar](30) NULL,
+	[Zip] [varchar](5) NOT NULL,
+	[Phone] [varchar](12) NULL,
+	[Email] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[Code] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
